@@ -50,6 +50,8 @@ viewerEl.appendChild(renderer.domElement);
 const labelRenderer = new CSS2DRenderer();
 labelRenderer.domElement.style.position = 'absolute';
 labelRenderer.domElement.style.top = '0';
+labelRenderer.domElement.style.left = '0';
+labelRenderer.domElement.style.zIndex = '2';
 labelRenderer.domElement.style.pointerEvents = 'none';
 viewerEl.appendChild(labelRenderer.domElement);
 

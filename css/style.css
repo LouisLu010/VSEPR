@@ -159,6 +159,10 @@ html, body {
 
 #viewer canvas {
   display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
 }
 
 /* Toolbar overlay on viewer */
@@ -173,7 +177,7 @@ html, body {
   border: 1px solid var(--border);
   border-radius: var(--radius);
   padding: 5px;
-  z-index: 5;
+  z-index: 10;
   backdrop-filter: blur(10px);
 }
 
@@ -227,7 +231,7 @@ html, body {
   gap: 12px;
   font-size: 10px;
   color: var(--text-muted);
-  z-index: 5;
+  z-index: 10;
 }
 
 .legend-item {
