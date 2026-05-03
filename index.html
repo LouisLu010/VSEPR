@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>分子空间结构 — VSEPR 模型 &amp; 杂化方式</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div id="app">
+    <!-- Sidebar -->
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h1>分子空间结构</h1>
+        <div class="subtitle">VSEPR 模型 · 杂化方式 · 键角</div>
+      </div>
+      <div class="sidebar-scroll" id="sidebar-scroll">
+        <!-- Populated by JS -->
+      </div>
+    </aside>
+
+    <!-- 3D Viewer -->
+    <div id="viewer">
+      <div id="legend">
+        <span class="legend-item"><span class="legend-dot lp"></span> 孤对电子</span>
+        <span class="legend-item"><span class="legend-dot geo"></span> VSEPR结构</span>
+      </div>
+      <div id="toolbar">
+        <button class="toolbar-btn active" id="toggle-lone-pairs">
+          孤对电子 <span class="key-hint">L</span>
+        </button>
+        <button class="toolbar-btn" id="toggle-geometry">
+          VSEPR结构 <span class="key-hint">G</span>
+        </button>
+        <button class="toolbar-btn" id="toggle-labels">
+          原子标签 <span class="key-hint">T</span>
+        </button>
+        <button class="toolbar-btn active" id="toggle-auto-rotate">
+          自动旋转 <span class="key-hint">R</span>
+        </button>
+        <button class="toolbar-btn" id="reset-view">
+          重置视角 <span class="key-hint">0</span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Info Panel -->
+    <aside id="info-panel">
+      <div class="info-section">
+        <div class="info-section-title">分子</div>
+        <div class="mol-identity-row">
+          <span id="mol-formula">CH₄</span>
+          <span id="mol-charge" style="display:none"></span>
+        </div>
+        <div id="mol-title" style="margin-top:2px">甲烷</div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-section-title">VSEPR 分类</div>
+        <div class="info-row">
+          <span class="info-label">VSEPR 公式</span>
+          <span class="info-value highlight" id="vsepr-formula">AX₄</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">空间位数</span>
+          <span class="info-value" id="steric-number">4</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">VSEPR结构</span>
+          <span class="info-value geometry" id="electron-geometry">四面体形</span>
+        </div>
+        <div class="info-row">
+          <span class="info-label">分子几何</span>
+          <span class="info-value geometry" id="molecular-geometry">四面体形</span>
+        </div>
+      </div>
+
+      <div class="info-section">
+        <div class="info-section-title">杂化 &amp; 键角</div>
+        <div style="text-align:center;margin:8px 0">
+          <span class="hyb-badge" id="hybridization">sp³</span>
+        </div>
+        <div class="info-row" style="margin-top:8px">
+          <span class="info-label">键角</span>
+          <span class="info-value" id="bond-angle">109.5°</span>
+        </div>
+      </div>
+
+      <div class="info-section" style="font-size:11px;color:var(--text-muted);line-height:1.6">
+        <strong style="color:var(--text-secondary)">操作提示</strong><br>
+        拖拽旋转 · 滚轮缩放 · 右键平移<br>
+        按键 <strong>L</strong> 孤对电子 · <strong>G</strong> VSEPR结构<br>
+        <strong>T</strong> 标签 · <strong>R</strong> 自动旋转 · <strong>0</strong> 重置
+      </div>
+    </aside>
+  </div>
+
+  <script type="importmap">
+  {
+    "imports": {
+      "three": "https://unpkg.com/three@0.160.0/build/three.module.js",
+      "three/addons/": "https://unpkg.com/three@0.160.0/examples/jsm/"
+    }
+  }
+  </script>
+  <script type="module" src="js/main.js?v=2"></script>
+</body>
+</html>
